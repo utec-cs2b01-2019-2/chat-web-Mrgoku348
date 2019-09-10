@@ -10,6 +10,10 @@ engine = db.createEngine()
 
 app = Flask(__name__)
 
+@app.route('/cuantasletras/<nombre>')
+def cuantasletras(nombre):
+    return str(len(nombre))
+    
 @app.route('/')
 def index():
     return render_template('index.html')
