@@ -200,13 +200,15 @@ def suma (numero):
     session[suma] = suma 
     return str(suma)
 
-@app.route('/authenticate/<username>/<password>')
-def authenticate(username,password):
+@app.route('/authenticate', methods = ['POST'])
+def authenticate():
+    username = request.form['username']
+    password = request.form['password']
     if username== 'jbellido'and password =="qwerty":
         session['usuario']=username;
         return "Welcome" + username;
     else:
-        return "sorry" + username + "you are not a valid user"
+        return "sorry " + username + " you are not a valid user"
 
 
 if __name__ == '__main__':
