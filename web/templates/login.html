@@ -5,8 +5,11 @@
     <title>Login</title>
 </head>
 <body>
-	<input type="text" name="username">
-	<input type="password" name="password">
-    <input type="button" value="Login">
+	<form method="post" action="/authenticate">	
+		<input type="text" name="username">
+		<input type="password" name="password">
+    	<input type="submit" value="Login">
+	</form>	
+
 </body>
 </html>
