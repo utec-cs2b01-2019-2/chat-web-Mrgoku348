@@ -213,6 +213,7 @@ def current_user():
 def logout():
     session.clear()
     return render_template('login.html')
+
 @app.route('/suma/<numero>')
 def suma (numero):
     if 'suma' not in session:
@@ -221,6 +222,15 @@ def suma (numero):
     suma = suma + int [numero]
     session[suma] = suma 
     return str(suma)
+
+@app.route('authenticate/<username>/<password>')
+def authenticate(username,password)
+    if username== 'jbellido'and password =="qwerty":
+        session['usuario']=username;
+        return "Welcome" + username;
+    else:
+        return "sorry" + username + "you are not a valid user"
+
 
 if __name__ == '__main__':
     app.secret_key = ".."
