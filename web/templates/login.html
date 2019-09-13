@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-	<form method="post" action="/authenticate">	
-		<input type="text" name="username">
-		<input type="password" name="password">
-    	<input type="submit" value="Login">
-	</form>	
+	<head>
+    	<meta charset="UTF-8">
+    	<title>le>Login </title>
+    	<link rel="stylesheet" type="/css/master.css">
+	</head>
+	<body>
+		<div class="login-box">
+			<img src="img/logo.png" class="avatar" alt="Avatar Image">
+			<h1>Login Here
+			</h1>
+		<form method="post" action="/authenticate">
+			<label for="username">Username</label>
+			<input type="text" name="username">
 
-</body>
+			<label for="password">Password</label>
+
+			<input type="password" name="password">
+	    	<input type="submit" value="Login">
+	    	<a href="#">Lost your password?</a>
+	    	<a href="#">Dont have an account?</a>
+		</form>
+		
+		</div>	
+	</body>
 </html>
