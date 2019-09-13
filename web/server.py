@@ -215,7 +215,8 @@ def logout():
     return render_template('login.html')
 @app.route('/suma/<numero>')
 def suma (numero):
-
+    if 'suma' not in session:
+        session['suma']= 0
     suma = session['suma']
     suma = suma + int [numero]
     session[suma] = suma 
