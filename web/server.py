@@ -213,6 +213,13 @@ def current_user():
 def logout():
     session.clear()
     return render_template('login.html')
+@app.route('/suma/<numero>')
+def suma (numero):
+
+    suma = session['suma']
+    suma = suma + int [numero]
+    session[suma] = suma 
+    return str(suma)
 
 if __name__ == '__main__':
     app.secret_key = ".."
