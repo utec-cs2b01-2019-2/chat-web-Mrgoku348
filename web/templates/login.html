@@ -2,19 +2,18 @@
 <html lang="en">
 	<head>
     	<meta charset="UTF-8">
-    	<title>le>Login </title>
-    	<link rel="stylesheet" type="/css/master.css">
+    	<title>Login </title>
+    	<link rel="stylesheet" href="/css/master.css">
 	</head>
 	<body>
 		<div class="login-box">
 			<img src="img/logo.png" class="avatar" alt="Avatar Image">
-			<h1>Login Here
-			</h1>
+			<h1>Login Here</h1>
 		<form method="post" action="/authenticate">
-			<label for="username">Username</label>
+			<label id="username" for="username">Username</label>
 			<input type="text" name="username">
 
-			<label for="password">Password</label>
+			<label id="password" for="password">Password</label>
 
 			<input type="password" name="password">
 	    	<input type="submit" value="Login">
