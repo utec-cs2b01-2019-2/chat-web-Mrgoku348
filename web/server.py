@@ -54,7 +54,7 @@ def get_users():
     data = dbResponse[:]
     return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
 
-@app.route('/users', methods = ['PUT'])
+@app.route('/users/<id>', methods = ['PUT'])
 def update_user():
     session = db.getSession(engine)
     id = request.form['key']
@@ -66,7 +66,8 @@ def update_user():
     session.commit()
     return 'Updated User'
 
-@app.route('/users', methods = ['DELETE'])
+
+@app.route('/users/<id>', methods = ['DELETE'])
 def delete_user():
     id = request.form['key']
     session = db.getSession(engine)
