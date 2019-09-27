@@ -75,6 +75,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -225,12 +226,12 @@
       <workItem from="1568728626180" duration="153000" />
       <workItem from="1568729406227" duration="994000" />
       <workItem from="1568994329757" duration="589000" />
-      <workItem from="1569594121037" duration="837000" />
+      <workItem from="1569594121037" duration="980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7471000" />
+    <option name="totallyTimeSpent" value="7614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
