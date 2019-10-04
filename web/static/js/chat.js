@@ -4,26 +4,15 @@ function sendMessage(){
 function get_all_users(){
     console.log("voy a traer todos los usuarios");
 
-    $.get.JSON("/users",function(data){
+    $.getJSON("/users",function(data){
      var i =0;
     $.each(data,function(){
         user_to = data[i]['id'];
-        e =' <div class="alert" role="alert">';
+        e ='<div class="alert" role="alert">';
         e = e+"<div>" + data[i]['username']+"</div>";
         e = e+"</div>";
         i = i+ 1;
         $("<div/>",{html:e}).appendTo("#users");
         });
     });
-}
-function PresentarNombre(){
-    console.log("presentar_nombre");
-    $.get.Jason("/name", function(data){
-      var i = 0;
-    $.each(data,function(){
-
-
-
-        });
-});
-    }
+};
