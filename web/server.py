@@ -24,7 +24,8 @@ def static_content(content):
 
 @app.route('/users', methods = ['POST'])
 def create_user():
-    c =  json.loads(request.form['values'])
+   # c =json.loads(request.form['values'])
+    c = json.loads(request.form['values'])
     user = entities.User(
         username=c['username'],
         name=c['name'],
@@ -57,9 +58,11 @@ def get_users():
 @app.route('/users/<id>', methods = ['PUT'])
 def update_user():
     session = db.getSession(engine)
-    id = request.form['key']
+    #id = request.form['key']
     user = session.query(entities.User).filter(entities.User.id == id).first()
-    c = json.loads(request.form['values'])
+    #c = json.loads(request.form['values'])
+    c=json.loads(request.data)
+
     for key in c.keys():
         setattr(user, key, c[key])
     session.add(user)
@@ -69,7 +72,7 @@ def update_user():
 
 @app.route('/users/<id>', methods = ['DELETE'])
 def delete_user():
-    id = request.form['key']
+    #id = request.form['key']
     session = db.getSession(engine)
     user = session.query(entities.User).filter(entities.User.id == id).one()
     session.delete(user)
@@ -231,10 +234,10 @@ def authenticate():
 #add
 @app.route('/groups',methods= ['POST'])
 def create_group():
-    c= json.loads(request.data)
-    group= entities.Group(name=c['name'])
-    session_db= db.getSession(engine)
-    session_db=db.getSession(engine)
+    c = json.loads(request.data)
+    group = entities.Group(name=c['name'])
+    session_db = db.getSession(engine)
+    session_db = db.getSession(engine)
     session_db.add(group)
     session_db.commit()
     return 'Created group'

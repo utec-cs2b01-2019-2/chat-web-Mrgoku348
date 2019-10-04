@@ -7,12 +7,23 @@ function get_all_users(){
     $.get.JSON("/users",function(data){
      var i =0;
     $.each(data,function(){
-        user_to=data[i]['id'];
+        user_to = data[i]['id'];
         e ='<div class="alert" role="alert">';
-        e =e+'<div>' + data[i]['username']+'</div>';
+        e = e+'<div>' + data[i]['username']+'</div>';
         e = e+'</div>';
         i = i+ 1;
         $("<div/>",{html:e}).appendto("#users");
         });
     });
 }
+function enviarMensaje(){
+    console.log("nuevo mensaje");
+    $.get.Jason("/mensaje", function(data){
+      var i = 0;
+    $.each(data,function(){
+
+
+
+        });
+});
+    }
