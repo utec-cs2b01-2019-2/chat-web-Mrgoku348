@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16051b00-6d4f-42dd-a100-f5cc678983a2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/users.html" afterDir="false" />
-    </list>
+    <list default="true" id="16051b00-6d4f-42dd-a100-f5cc678983a2" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +120,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="643" />
     <option name="y" value="58" />
     <option name="width" value="611" />
@@ -278,15 +275,15 @@
       <workItem from="1570203767564" duration="1026000" />
       <workItem from="1570586138032" duration="164000" />
       <workItem from="1570586779349" duration="56000" />
-      <workItem from="1570587472108" duration="1147000" />
+      <workItem from="1570587472108" duration="1169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20216000" />
+    <option name="totallyTimeSpent" value="20238000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="752" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -300,7 +297,7 @@
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32994923" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.17124394" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.17124394" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
