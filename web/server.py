@@ -7,7 +7,6 @@ import time
 
 db = connector.Manager()
 engine = db.createEngine()
-
 app = Flask(__name__)
 
 
