@@ -9,7 +9,6 @@
     <script src="/static/js/chat.js"></script>
 </head>
 <body>
-    Hola soy un simple boton
     <button type="button" class="btn btn-warning" onclick="sendMessage()">Warning</button>
     <a href="/logout">Logout</a>
     <table width="100%" border="1px">
@@ -19,7 +18,7 @@
             <label id="current_username"></label>
                 <button type="button" class="btn btn-primary" onclick= "get_all_users()">Get users</button>
             </div>
-            <div id="users"></div>
+            <div onclick="get_all_users()"></div>
         </td>
 
         <td width="70%">
@@ -31,7 +30,7 @@
             </div>
 
             <div>
-                <button type="button" class="btn btn-primary" onclick="sendMessage()">Send</button>
+                <button type="button" class="btn btn-primary" onclick="mandarMensaje()">Send</button>
             </div>
         </td>
         </tr>
