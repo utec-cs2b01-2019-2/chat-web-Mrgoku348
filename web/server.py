@@ -9,6 +9,8 @@ db = connector.Manager()
 engine = db.createEngine()
 app = Flask(__name__)
 
+#ojeroku
+#amazon(nube)
 
 @app.route('/')
 def index():
@@ -20,7 +22,7 @@ def static_content(content):
 
 @app.route('/users', methods = ['POST'])
 def create_user():
-   # c =json.loads(request.form['values'])
+   #c =json.loads(request.form['values'])
     c = json.loads(request.form['values'])
     user = entities.User(
         username=c['username'],
