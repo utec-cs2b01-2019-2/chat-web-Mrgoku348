@@ -1,5 +1,6 @@
 $(function(){
-    var url = "http://127.0.0.1:8000/users";
+    var url = "http://127.0.0.1:8000/message";
+    var url_users = "http://127.0.0.1:8000/users";
 
 
     $("#grid").dxDataGrid({
@@ -31,11 +32,45 @@ $(function(){
         },
         columns: [{
             dataField: "id",
+            dataType: "number",
             allowEditing: false
         }, {
-            dataField: "username"
+            dataField: "content"
         }, {
-            dataField: "message"
-        }, ],
+            dataField: "set_on",
+            dataType:"date",
+            format:"MM/dd/yyyy hh:mm tt"
+        }, {
+            dataField: "user_from_id",lookup:{
+                dataSource:DevExpress.data.AspNet.createStore({
+                    key: "id",
+                    loadUrl: url_users,
+                    insertUrl: url_users,
+                    updateUrl: url_users,
+                    deleteUrl: url_users,
+                    onBeforeSend: function (method, ajaxOptions) {
+                        ajaxOptions.xhrFields = {withCredentials: true};
+                    }
+                }),
+                valueExpr:"id",
+                displayExpr:"username"
+            }
+        }, {
+            dataField: "user_to_id",lookup:{
+                dataSource:DevExpress.data.AspNet.createStore({
+                    key: "id",
+                    loadUrl: url_users,
+                    insertUrl: url_users,
+                    updateUrl: url_users,
+                    deleteUrl: url_users,
+                    onBeforeSend: function (method, ajaxOptions) {
+                        ajaxOptions.xhrFields = {withCredentials: true};
+                    }
+                }),
+                valueExpr:"id",
+                displayExpr:"username"
+            }
+        },
+        ],
     }).dxDataGrid("instance");
 });
