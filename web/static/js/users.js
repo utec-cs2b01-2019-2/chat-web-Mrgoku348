@@ -41,6 +41,6 @@ $(function(){
             dataField: "fullname"
         }, {
             dataField: "password"
-        }, ],
+        } ]
     }).dxDataGrid("instance");
 });

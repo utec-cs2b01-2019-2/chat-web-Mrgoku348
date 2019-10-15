@@ -1,6 +1,6 @@
 $(function(){
     var url = "http://127.0.0.1:8000/message";
-    var url_users = "http://127.0.0.1:8000/users";
+
 
 
     $("#grid").dxDataGrid({
