@@ -39,10 +39,11 @@ $(function(){
         }, {
             dataField: "set_on",
             dataType:"date",
-            format:"MM/dd/yyyy hh:mm tt"
+            format:"MM/dd/yyyy hh:mm "
         }, {
-            dataField: "user_from_id",lookup:{
-                dataSource:DevExpress.data.AspNet.createStore({
+            dataField: "user_from_id",
+            lookup:{
+                dataSource: DevExpress.data.AspNet.createStore({
                     key: "id",
                     loadUrl: url_users,
                     insertUrl: url_users,
@@ -56,8 +57,9 @@ $(function(){
                 displayExpr:"username"
             }
         }, {
-            dataField: "user_to_id",lookup:{
-                dataSource:DevExpress.data.AspNet.createStore({
+            dataField: "user_to_id",
+            lookup:{
+                dataSource: DevExpress.data.AspNet.createStore({
                     key: "id",
                     loadUrl: url_users,
                     insertUrl: url_users,
@@ -70,7 +72,7 @@ $(function(){
                 valueExpr:"id",
                 displayExpr:"username"
             }
-        },
-        ],
+        }
+        ]
     }).dxDataGrid("instance");
 });
