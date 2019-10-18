@@ -75,6 +75,6 @@ $(function(){
                     valueExpr: "id",
                     displayExpr: "username"
                 }
-        } ],
+        } ]
     }).dxDataGrid("instance");
 });
