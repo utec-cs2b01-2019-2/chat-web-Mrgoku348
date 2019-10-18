@@ -205,7 +205,6 @@ def suma (numero):
 @app.route('/authenticate', methods = ['POST'])
 def authenticate():
     #Get data form request
-    time.sleep(3)
     message = json.loads(request.data)
     username = message['username']
     password = message['password']
@@ -222,6 +221,7 @@ def authenticate():
         message = {'message':'Authorized'}
         return Response(message, status=200,mimetype='application/json')
     except Exception:
+
         message = {'message':'Unauthorized'}
         return Response(message, status=401,mimetype='application/json')
 

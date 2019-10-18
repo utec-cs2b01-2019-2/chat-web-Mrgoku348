@@ -4,7 +4,7 @@ function sendMessage(){
 function get_current(){
     console.log("Voy a traer el usuario logueado");
     $.getJSON("/current", function(data){
-        console.log("Current user is "+data['username'])
+        console.log("Current user is "+data['username']);
         get_all_users(data['id']);
     });
 }
@@ -41,4 +41,4 @@ function get_messages() {
         $("<div/>", {html: e}).appendTo("#messages")
         });
     });
-};
+}
