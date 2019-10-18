@@ -13,7 +13,7 @@ function get_all_users(){
     $.each(data,function(){
         user_to = data[i]['id'];
         e ='<div class="alert" role="alert">';
-        e = e+"<button type='button' class='btn btn-primary'>" + data[i]['username']+"</button>";
+        e = e+'<div>'+data[i]['username']+'</div>';
         e = e+"</div>";
         i = i+ 1;
         $("<div/>",{html:e}).appendTo("#users");

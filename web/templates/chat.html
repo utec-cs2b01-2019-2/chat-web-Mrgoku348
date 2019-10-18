@@ -17,8 +17,12 @@
             <div id="current">
             <label id="current_username"></label>
                 <button type="button" class="btn btn-primary" onclick= "get_all_users()">Get users</button>
-            </div>
             <div onclick="get_all_users()"></div>
+                <label id="current_message"></label>
+
+                <button type="button" class="btn btn-primary" onclick="get_messages()">Mostrar mensajes</button>
+            <div onclick="get_messages()"></div>
+            </div>
         </td>
 
         <td width="70%">
@@ -30,7 +34,7 @@
             </div>
 
             <div>
-                <button type="button" class="btn btn-primary" onclick="mandarMensaje()">Send</button>
+                <button type="button" class="btn btn-primary" onclick="get_messages()">Send</button>
             </div>
         </td>
         </tr>
