@@ -22,18 +22,30 @@ def static_content(content):
 
 @app.route('/users', methods = ['POST'])
 def create_user():
-   #c =json.loads(request.form['values'])
-    c = json.loads(request.form['values'])
-    user = entities.User(
-        username=c['username'],
-        name=c['name'],
-        fullname=c['fullname'],
-        password=c['password']
-    )
-    session = db.getSession(engine)
-    session.add(user)
-    session.commit()
-    return 'Created User'
+    message = json.loads(request.data)
+    username = message['username']
+    # 2. look in database
+    db_session = db.getSession(engine)
+
+    user = db_session.query(entities.User
+                            ).filter(entities.User.username == username
+                                     ).first()
+
+    if user != None:
+        return 'NOT'
+
+    else:
+        c = json.loads(request.data)
+        user = entities.User(
+            username=c['username'],
+            name=c['name'],
+            fullname=c['fullname'],
+            password=c['password']
+        )
+        session = db.getSession(engine)
+        session.add(user)
+        session.commit()
+        return 'OK'
 
 @app.route('/users/<id>', methods = ['GET'])
 def get_user(id):
@@ -41,16 +53,18 @@ def get_user(id):
     users = db_session.query(entities.User).filter(entities.User.id == id)
     for user in users:
         js = json.dumps(user, cls=connector.AlchemyEncoder)
-        return  Response(js, status=200, mimetype='application/json')
+        return Response(js, status=200, mimetype='application/json')
 
-    message = { 'status': 404, 'message': 'Not Found'}
+    message = {'status': 404, 'message': 'Not Found'}
     return Response(message, status=404, mimetype='application/json')
 
 @app.route('/users', methods = ['GET'])
 def get_users():
     session = db.getSession(engine)
     dbResponse = session.query(entities.User)
-    data = dbResponse[:]
+    data = []
+    for user in dbResponse:
+        data.append(user)
     return Response(json.dumps(data, cls=connector.AlchemyEncoder), mimetype='application/json')
 
 @app.route('/users/<id>', methods = ['PUT'])
@@ -68,7 +82,7 @@ def update_user():
     return 'Updated User'
 
 
-@app.route('/users/<id>', methods = ['DELETE'])
+@app.route('/users/<id>', methods=['DELETE'])
 def delete_user():
     #id = request.form['key']
     session = db.getSession(engine)
