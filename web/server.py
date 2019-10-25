@@ -9,8 +9,7 @@ db = connector.Manager()
 engine = db.createEngine()
 app = Flask(__name__)
 
-#ojeroku
-#amazon(nube)
+
 
 @app.route('/')
 def index():
